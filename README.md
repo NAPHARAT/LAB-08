@@ -997,7 +997,7 @@ using System;
                 message = "wed is Wednesday ,Color is Green";
                 break;
             case "THU":
-                message = "fri is Friday ,Color is Orange";
+                message = "thu is Friday ,Color is Orange";
                 break;
             case "FRI":
                 message = "fri is Friday ,Color is Blue";
