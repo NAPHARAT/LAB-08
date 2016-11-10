@@ -965,9 +965,6 @@ sat|	Saturday	|Purple
 อื่นๆ|	 ---|	---
 
 
-##Reference
-เนื้อหาในส่วนนี้เป็นอ้างอิงสำหรับการเขียนโปรแกรม
-
 
 Code
 
@@ -1018,6 +1015,12 @@ using System;
 เอ้าต์พุต
 
 ![](https://github.com/NAPHARAT/LAB-08/blob/master/pic/16.JPG)
+
+
+##Reference
+เนื้อหาในส่วนนี้เป็นอ้างอิงสำหรับการเขียนโปรแกรม
+
+
 
 
 ###Exceptions
