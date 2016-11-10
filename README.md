@@ -256,7 +256,7 @@ public class TryCatch
 ```
 
 
-Code
+แก้ไข
 
 ```
 using System;
@@ -317,7 +317,6 @@ public class ExceptionLearning
 4.	FormatException
 ```
 
-
 ```
 using System;
 using System.IO;
@@ -356,13 +355,12 @@ public class ExceptionLearning
     }
  }
 
+```
+
+
+ข้อ1 code
 
 ```
- 
-
-
-```
-csharp
 using System;
 using System.IO;
 public class ExceptionLearning
@@ -371,7 +369,7 @@ public class ExceptionLearning
     {
         int a = 10;
         int b = 20;
-        int c ;
+        int c;
         try
         {
             c = div(a, b);
@@ -382,11 +380,11 @@ public class ExceptionLearning
             Console.WriteLine("DivideByZeroException");
             Console.WriteLine(e.Message);
         }
-        catch (NullReferenceException e) 
+        catch (NullReferenceException e)
         {
             Console.WriteLine("NullReferenceException");
             Console.WriteLine(e.Message);
-        
+
         }
         catch (Exception e)
         {
@@ -396,10 +394,161 @@ public class ExceptionLearning
     }
     private static int div(int a, int b)
     {
-        throw new _____________________();
+        throw new DivideByZeroException();
     }
- }
-````
+}
+```
+
+เอ้าต์พุต
+
+![](https://github.com/NAPHARAT/LAB-08/blob/master/pic/5.JPG)
+
+
+ข้อ2 code
+
+```
+using System;
+using System.IO;
+public class ExceptionLearning
+{
+    public static void Main()
+    {
+        int a = 10;
+        int b = 20;
+        int c;
+        try
+        {
+            c = div(a, b);
+        }
+        catch (DivideByZeroException e)
+        {
+
+            Console.WriteLine("DivideByZeroException");
+            Console.WriteLine(e.Message);
+        }
+        catch (NullReferenceException e)
+        {
+            Console.WriteLine("NullReferenceException");
+            Console.WriteLine(e.Message);
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Exception");
+            Console.WriteLine(e.Message);
+        }
+    }
+    private static int div(int a, int b)
+    {
+        throw new NullReferenceException();
+    }
+}
+
+```
+เอ้าต์พุต
+
+
+![](https://github.com/NAPHARAT/LAB-08/blob/master/pic/6.JPG)
+
+
+ข้อ3 code
+
+
+```
+using System;
+using System.IO;
+public class ExceptionLearning
+{
+    public static void Main()
+    {
+        int a = 10;
+        int b = 20;
+        int c;
+        try
+        {
+            c = div(a, b);
+        }
+        catch (DivideByZeroException e)
+        {
+
+            Console.WriteLine("DivideByZeroException");
+            Console.WriteLine(e.Message);
+        }
+        catch (NullReferenceException e)
+        {
+            Console.WriteLine("NullReferenceException");
+            Console.WriteLine(e.Message);
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Exception");
+            Console.WriteLine(e.Message);
+        }
+    }
+    private static int div(int a, int b)
+    {
+        throw new FileNotFoundException();
+    }
+}
+
+
+```
+เอ้าต์พุต
+
+![](https://github.com/NAPHARAT/LAB-08/blob/master/pic/7.JPG)
+
+
+
+ข้อ4 code
+
+```
+using System;
+using System.IO;
+public class ExceptionLearning
+{
+    public static void Main()
+    {
+        int a = 10;
+        int b = 20;
+        int c;
+        try
+        {
+            c = div(a, b);
+        }
+        catch (DivideByZeroException e)
+        {
+
+            Console.WriteLine("DivideByZeroException");
+            Console.WriteLine(e.Message);
+        }
+        catch (NullReferenceException e)
+        {
+            Console.WriteLine("NullReferenceException");
+            Console.WriteLine(e.Message);
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Exception");
+            Console.WriteLine(e.Message);
+        }
+    }
+    private static int div(int a, int b)
+    {
+        throw new FormatException();
+    }
+}
+
+
+
+```
+
+
+เอ้าต์พุต
+
+
+![](https://github.com/NAPHARAT/LAB-08/blob/master/pic/8.JPG)
 
 ###เรื่องของ exception นี้ศึกษาเพิ่มเติมได้ [ที่นี่](http://msdn.microsoft.com/en-us/library/vstudio/2w8f0bss%28v=vs.100%29.aspx)
 
@@ -465,6 +614,61 @@ execute next line
 2.	ถ้าค่าที่ผู้ใช้ป้อน น้อยกว่า ค่าที่สุ่มมาได้ ให้พิมพ์ ```“Too Low, You loss!!”```ออกทางหน้าจอ
 3.	ถ้าค่าที่ผู้ใช้ป้อน เท่ากับ ค่าที่สุ่มมาได้ ให้พิมพ์ ```“Okay, You win!!”``` ออกทางหน้าจอ
 
+
+Code
+
+
+```
+using System;
+using System.IO;
+class Class3
+{
+    public static void Main()
+    {
+        Random random = new Random();
+        int randomNumber = random.Next(0, 100);
+        Console.WriteLine("Number Random : " + randomNumber);
+        Console.Write("Please Enter Number : ");
+        int a = Convert.ToInt32(Console.ReadLine());
+        if (a > randomNumber)
+        {
+            Console.WriteLine("Too Hight, You loss!!");
+        }
+        if (a < randomNumber)
+        {
+            Console.WriteLine("Too Low, You loss!!");
+        }
+        if (a == randomNumber)
+        {
+            Console.WriteLine("Okay, You win!!");
+        }
+    }
+}
+```
+
+
+เอ้าต์พุต
+
+
+1.
+
+![](https://github.com/NAPHARAT/LAB-08/blob/master/pic/9.JPG)
+
+
+2.
+
+
+![](https://github.com/NAPHARAT/LAB-08/blob/master/pic/10.JPG)
+
+
+3.
+
+
+![](https://github.com/NAPHARAT/LAB-08/blob/master/pic/11.JPG)
+
+
+
+
 ###1.2.2.	คำสั่ง ```if…else```
 
 เงื่อนไขที่เป็นไปได้ของคำสั่งในการตัดสินใจมีสองทางเสมอ (true และ false) ที่ผ่านมา เราจะเห็นว่า คำสั่ง if เป็นคำสั่งที่เลือกทำเพียงทางเดียว (เฉพาะในกรณีที่เงื่อนไขเป็น true เท่านั้น) หากต้องการให้โปรแกรมทำงานทั้งกรณีที่เงื่อนไขเป็น true และ false เราต้องใช้คำสั่ง if…else โดยมีรูปแบบดังนี้
@@ -512,6 +716,14 @@ this line is always execute
 ให้เขียนโปรแกรมสุ่มตัวเลข (จากใบงานที่ 7) แล้วใช้คำสั่ง ```if…else``` โดยมีเงื่อนไขต่อไปนี้
 
 1. ถ้าค่าที่ผู้ใช้ป้อน เท่ากับ ค่าที่สุ่มมาได้ ให้พิมพ์ ```“Hooray, You win!!”``` ออกทางหน้าจอ มิฉะนั้นให้พิมพ์คำว่า ```“Sorry, You loss!!”```
+
+เอ้าต์พุต
+
+
+![](https://github.com/NAPHARAT/LAB-08/blob/master/pic/12.JPG)
+
+
+![](https://github.com/NAPHARAT/LAB-08/blob/master/pic/13.JPG)
 
 ###1.2.3.	คำสั่ง ```if``` ซ้อนกัน (nested if)
 คำสั่ง ```if``` สามารถเขียนซ้อนกันเป็นชั้นได้ เรียกว่า nested if มีรูปแบบดังนี้
@@ -605,6 +817,76 @@ Grade C
 
 3. รูปแบบการพิมพ์คือ score: [sss] grade: [gg] เมื่อ sss คือคะแนน และ gg คือ เกรดที่ได้
 
+
+
+
+Code
+
+
+```
+using System;
+using System.IO;
+class Class5
+{
+    static void Main(string[] args)
+    {
+        Random random = new Random();
+        int sss = random.Next(0, 100);
+
+        if (sss < 50)
+        {
+            Console.WriteLine("Score : " + sss);
+            Console.WriteLine("Grade : F");
+        }
+        else if (sss < 55)
+        {
+            Console.WriteLine("Score : " + sss);
+            Console.WriteLine("Grade : D");
+        }
+        else if (sss < 60)
+        {
+            Console.WriteLine("Score : " + sss);
+            Console.WriteLine("Grade : D+");
+        }
+        else if (sss < 65)
+        {
+            Console.WriteLine("Score : " + sss);
+            Console.WriteLine("Grade : C");
+        }
+        else if (sss < 70)
+        {
+            Console.WriteLine("Score : " + sss);
+            Console.WriteLine("Grade : C+");
+        }
+        else if (sss < 75)
+        {
+            Console.WriteLine("Score : " + sss);
+            Console.WriteLine("Grade : B");
+        }
+        else if (sss < 80)
+        {
+            Console.WriteLine("Score : " + sss);
+            Console.WriteLine("Grade : B+");
+        }
+        else
+        {
+            Console.WriteLine("Score : " + sss);
+            Console.WriteLine("Grade : A");
+        }
+    }
+}
+```
+
+
+เอ้าต์พุต
+
+
+![](https://github.com/NAPHARAT/LAB-08/blob/master/pic/14.JPG)
+
+
+![](https://github.com/NAPHARAT/LAB-08/blob/master/pic/15.JPG)
+
+
 ###1.2.5. คำสั่ง ```switch```
 
 ในกรณีที่มีทางเลือกในการตัดสินใจเป็นจำนวนมาก ไม่เป็นการสะดวกที่จะเขียนเป็นโปรแกรมยาวๆ เช่นในกรณีของคำสั่ง if…else…if ภาษา C# มีคำสั่งตัดสินใจเลือกทิศทางของโปรแกรมแบบหลายทางเลือกให้ใช้คือคำสั่ง switch ซึ่งรูปแบบการใช้งาน ดังนี้
@@ -685,6 +967,58 @@ sat|	Saturday	|Purple
 
 ##Reference
 เนื้อหาในส่วนนี้เป็นอ้างอิงสำหรับการเขียนโปรแกรม
+
+
+Code
+
+
+```
+using System;
+
+    class Class6
+    {
+        static void Main(string[] args)
+    {
+        Console.Write("Input day name : ");
+        string day = Console.ReadLine();
+        string message;
+        switch (day.ToUpper())
+        {
+            case "SUN":
+                message = "sun is Sunday ,Color is Red";
+                break;
+            case "MON":
+                message = "mon is Monday ,Color is Yellow";
+                break;
+            case "TUE":
+                message = "tue is Tuesday ,Color is Pink";
+                break;
+            case "WED":
+                message = "wed is Wednesday ,Color is Green";
+                break;
+            case "THU":
+                message = "fri is Friday ,Color is Orange";
+                break;
+            case "FRI":
+                message = "fri is Friday ,Color is Blue";
+                break;
+            case "SAT":
+                message = "sat is Saturday ,Color is Purple";
+                break;
+            default:
+                message = "Others is --- ,Color is ---";
+                break;
+        }
+        Console.WriteLine(message);
+    }
+}
+
+```
+
+เอ้าต์พุต
+
+![](https://github.com/NAPHARAT/LAB-08/blob/master/pic/16.JPG)
+
 
 ###Exceptions
 
