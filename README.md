@@ -1,6 +1,6 @@
 #ใบงานที่ 8
 ##การเปลี่ยนทิศทางการทำงานของโปรแกรม
-
+##นางสาวนภารัตน ฐิติกรโกวิท 57030180
 ##1). การเปลี่ยนทิศทางการทำงานของโปรแกรม
 
 ###1.1). การเปลี่ยนทิศทางแบบไม่มีเงื่อนไข
@@ -50,6 +50,49 @@ Line 5
 Line 2
 Line 9
 ```
+
+Code
+
+```
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab8
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Line 1");
+            goto line4;
+        line2:
+            Console.WriteLine("Line 2");
+            goto line9;
+            Console.WriteLine("Line 3");
+        line4:
+            Console.WriteLine("Line 4");
+            Console.WriteLine("Line 5");
+            goto line2;
+            Console.WriteLine("Line 6");
+            Console.WriteLine("Line 7");
+            Console.WriteLine("Line 8");
+            Console.WriteLine("Line 10");
+        line9:
+            Console.WriteLine("Line 9");
+        }
+    }
+}
+
+```
+
+เอาต์พุต
+
+![](https://github.com/NAPHARAT/LAB-08/blob/master/pic/1.JPG)
+
+
 ###1.1.2. try…catch…finally
 ประโยค ```try…catch…finally``` ใช้สำหรับการดักจับและจัดการข้อผิดพลาดของโปรแกรม ทั้งขณะทำงาน (Run Time Process) หรือในขณะเริ่มต้นทำงาน (Init Process) โดยเราจะวางคำสั่งที่คาดการว่าจะเกิดข้อผิดพลาดขึ้นไว้ในบล็อกของ ```Try``` และวางส่วนจัดการข้อผิดพลาดไว้ในบล็อกของ ```catch``` และถ้ามีการดำเนินการใดๆ ที่ต้องทำทั้งในกรณีที่มีและไม่มีข้อผิดพลาด ก็จะใส่ไว้ในบล็อกของ ```Finally``` ในคำสั่งนี้สามารถเขียนบล็อกของ ```catch``` ได้หลายบล็อก คำสั่งนี้มีประโยชน์มากในการทำงานกับระบบอินเตอร์เน็ต โดยเฉพาะในกรณีที่การเชื่อมต่อไม่เสถียร เพราะจะช่วยป้องกันการค้างของโปรแกรมของเราขณะเรียกข้อมูลจาก network ได้
 **ตัวอย่าง** โปรแกรมที่ไม่ได้ใช้คำสั่ง ```try…catch…finally```
@@ -143,6 +186,10 @@ public class TryCatch
      }
  }
 ```
+
+ผลการทดลอง สามารถรันโค้ดโปรแกรมได้
+
+![](https://github.com/NAPHARAT/LAB-08/blob/master/pic/2.JPG)
 ###2.
 ``` csharp
 using System;
@@ -157,6 +204,40 @@ public class TryCatch
      }
  }
 ```
+
+
+แก้ไข
+
+Code
+
+```
+using System;
+public class Class1
+{
+    static void Main(string[] args)
+    {
+        object m = null;
+        try
+        {
+            int a = 0;
+            int b = 10;
+            b /= a;
+            Console.WriteLine(a);
+        }
+        catch (DivideByZeroException e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+}
+
+```
+
+
+เอ้าต์พุต
+
+![](https://github.com/NAPHARAT/LAB-08/blob/master/pic/3.JPG)
+
 ###3.
 ``` csharp
 using System;
@@ -173,6 +254,37 @@ public class TryCatch
      }
  }
 ```
+
+
+Code
+
+```
+using System;
+public class Class1
+{
+    static void Main(string[] args)
+    {
+        try
+        {
+            int value = 800000000;
+            checked // check for overflow
+            {
+                int square = value * value;
+                Console.WriteLine("{0} ^ 2 = {1}", value, square);
+            }
+        }
+        catch (OverflowException e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+}
+
+```
+เอ้าต์พุต
+
+![](https://github.com/NAPHARAT/LAB-08/blob/master/pic/4.JPG)
+
 ###1.1.3. คำสั่ง ```throw```
 
 คำสั่ง ```throw``` ใช้เพื่อเปลี่ยนเส้นทางการทำงานของโปรแกรมโดยเจาะจง exception เป้าหมาย
@@ -204,7 +316,53 @@ public class ExceptionLearning
 3.	FileNotFoundException
 4.	FormatException
 ```
-```csharp
+
+
+```
+using System;
+using System.IO;
+public class ExceptionLearning
+{
+    public static void Main()
+    {
+        int a = 10;
+        int b = 20;
+        int c ;
+        try
+        {
+            c = div(a, b);
+        }
+        catch (DivideByZeroException e)
+        {
+
+            Console.WriteLine("DivideByZeroException");
+            Console.WriteLine(e.Message);
+        }
+        catch (NullReferenceException e) 
+        {
+            Console.WriteLine("NullReferenceException");
+            Console.WriteLine(e.Message);
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Exception");
+            Console.WriteLine(e.Message);
+        }
+    }
+    private static int div(int a, int b)
+    {
+        throw new _____________________();
+    }
+ }
+
+
+```
+ 
+
+
+```
+csharp
 using System;
 using System.IO;
 public class ExceptionLearning
